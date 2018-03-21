@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crawler Demo</title>
+</head>
+<body>
+
+    <input id="fanpage" type="text">
+    <button onclick="downloadInformation()">Download Information</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.6/xlsx.full.min.js"></script>
+    <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
+    <script src="../dist/crawler.min.js"></script>
+    <script>
+    function downloadInformation(){
+        const Crawler = new FbCrawler('');
+        let fanpage = document.getElementById('fanpage').value;
+        Crawler.grabInformation(fanpage);
+    }
+    </script>
+</body>
+</html>
